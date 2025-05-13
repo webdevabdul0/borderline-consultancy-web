@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const ApplicationProcess = () => {
@@ -76,40 +76,40 @@ const ApplicationProcess = () => {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="bg-blue-600 text-white py-16">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h1 className="text-4xl font-bold mb-6 animate-fade-in">Application Process</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto animate-fade-in">
+      <section className="gradient-primary text-white py-20">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 animate-fade-up">Application Process</h1>
+          <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto animate-fade-in-delay">
             We follow a streamlined and efficient process to ensure your visa application is handled professionally.
           </p>
         </div>
       </section>
 
       {/* Process Timeline Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
+      <section className="py-20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="max-w-5xl mx-auto">
             {steps.map((step, index) => (
-              <div key={index} className="mb-12 last:mb-0">
-                <div className="flex flex-col md:flex-row gap-6">
+              <div key={index} className="mb-16 last:mb-0 stagger-item stagger-delay-${index % 3 + 1}">
+                <div className="flex flex-col md:flex-row gap-8">
                   <div className="md:w-1/4 flex md:flex-col items-center md:items-start">
-                    <div className="flex-shrink-0 bg-blue-600 text-white h-14 w-14 rounded-full flex items-center justify-center text-xl font-bold mb-4 shadow-lg">
+                    <div className="flex-shrink-0 gradient-primary text-white h-20 w-20 rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg">
                       {step.number}
                     </div>
                     {index < steps.length - 1 && (
-                      <div className="hidden md:block w-0.5 bg-blue-200 h-28 ml-7 -mb-4"></div>
+                      <div className="hidden md:block w-0.5 bg-blue-200 h-36 ml-10 -mb-6"></div>
                     )}
                   </div>
                   <div className="md:w-3/4">
-                    <h2 className="text-2xl font-bold mb-3 text-gray-900">{step.title}</h2>
-                    <p className="text-gray-600 mb-4">{step.description}</p>
-                    <div className="bg-gray-50 p-5 rounded-lg">
-                      <h3 className="font-medium text-gray-900 mb-3">What we provide:</h3>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <h2 className="text-3xl font-bold mb-4 text-gray-900">{step.title}</h2>
+                    <p className="text-xl text-gray-600 mb-6">{step.description}</p>
+                    <div className="gradient-card p-8 rounded-xl shadow-md">
+                      <h3 className="font-semibold text-xl text-gray-900 mb-5">What we provide:</h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {step.details.map((detail, idx) => (
                           <li key={idx} className="flex items-start">
-                            <Check className="h-5 w-5 text-blue-600 mr-2 mt-0.5" />
-                            <span className="text-gray-700">{detail}</span>
+                            <CheckCircle className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
+                            <span className="text-lg text-gray-700">{detail}</span>
                           </li>
                         ))}
                       </ul>
@@ -123,10 +123,10 @@ const ApplicationProcess = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-          <div className="max-w-3xl mx-auto grid gap-6">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <h2 className="section-title gradient-text text-center mb-16">Frequently Asked Questions</h2>
+          <div className="max-w-4xl mx-auto grid gap-8">
             {[
               {
                 question: "How long does the visa application process take?",
@@ -145,9 +145,9 @@ const ApplicationProcess = () => {
                 answer: "Yes, we offer expedited services for urgent cases at an additional fee. The possibility and timeline for expedited processing depend on the visa type and current embassy policies."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="gradient-card p-8 rounded-xl shadow-lg stagger-item stagger-delay-${index % 4 + 1}">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{faq.question}</h3>
+                <p className="text-lg text-gray-600">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -155,13 +155,13 @@ const ApplicationProcess = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start Your Application?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+      <section className="py-20 gradient-primary text-white">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Start Your Application?</h2>
+          <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto">
             Our visa experts are ready to guide you through every step of the process.
           </p>
-          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover">
+          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover text-lg px-10 py-7 h-auto">
             <Link to="/contact">Schedule a Consultation</Link>
           </Button>
         </div>

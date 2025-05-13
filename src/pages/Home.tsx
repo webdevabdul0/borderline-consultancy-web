@@ -1,5 +1,5 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GraduationCap, Users, Briefcase, Home as HomeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -42,47 +42,74 @@ const Home = () => {
     });
   };
 
+  const services = [
+    {
+      title: "Business Visa",
+      description: "For entrepreneurs and business professionals visiting China for meetings, negotiations, and business activities.",
+      icon: <Briefcase className="h-8 w-8 text-white" />,
+      image: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=400&q=80"
+    },
+    {
+      title: "Study Visa",
+      description: "For students pursuing education in Chinese universities and educational institutions.",
+      icon: <GraduationCap className="h-8 w-8 text-white" />,
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&h=400&q=80"
+    },
+    {
+      title: "Family Visa",
+      description: "For family members of Chinese residents or citizens for reunion and settlement purposes.",
+      icon: <Users className="h-8 w-8 text-white" />,
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&h=400&q=80"
+    },
+    {
+      title: "Work Visa",
+      description: "For professionals seeking employment opportunities in Chinese companies and institutions.",
+      icon: <HomeIcon className="h-8 w-8 text-white" />,
+      image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=600&h=400&q=80"
+    }
+  ];
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
+      <section className="gradient-primary text-white">
+        <div className="container mx-auto px-4 md:px-8 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            <div className="space-y-8 animate-fade-up">
+              <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                 Your Gateway to <span className="text-blue-200">China</span>
               </h1>
-              <p className="text-lg md:text-xl text-blue-100">
+              <p className="text-xl md:text-2xl text-blue-100">
                 Professional visa consultancy services for Business, Study, Work, and Family visas.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover">
+                <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover text-lg">
                   <a href="#book-quote">Get Started</a>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 btn-hover">
+                <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 btn-hover text-lg">
                   <Link to="/services">Our Services</Link>
                 </Button>
               </div>
             </div>
-            <div className="relative flex justify-center">
-              <div className="w-full max-w-md h-80 relative overflow-hidden rounded-xl shadow-2xl animate-fade-in">
+            <div className="relative flex justify-center animate-fade-in-delay">
+              <div className="w-full max-w-lg h-96 relative overflow-hidden rounded-2xl shadow-2xl transform rotate-1 hover:rotate-0 transition-all duration-500">
                 <img 
                   src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?auto=format&fit=crop&w=800&h=500&q=80" 
                   alt="Shanghai skyline" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-blue-900/70 backdrop-blur-sm"></div>
+                <div className="image-overlay"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                  <h3 className="text-2xl font-bold mb-4">Trusted by Thousands</h3>
-                  <p className="text-blue-100 mb-6">Successfully processed over 5,000+ visa applications</p>
-                  <div className="grid grid-cols-2 gap-4 w-full">
-                    <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
-                      <div className="text-3xl font-bold text-white">98%</div>
-                      <div className="text-sm text-blue-100">Success Rate</div>
+                  <h3 className="text-3xl font-bold mb-4 text-white">Trusted by Thousands</h3>
+                  <p className="text-xl text-blue-100 mb-6">Successfully processed over 5,000+ visa applications</p>
+                  <div className="grid grid-cols-2 gap-6 w-full">
+                    <div className="bg-white/10 backdrop-blur-md p-5 rounded-xl">
+                      <div className="text-4xl font-bold text-white">98%</div>
+                      <div className="text-lg text-blue-100">Success Rate</div>
                     </div>
-                    <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg">
-                      <div className="text-3xl font-bold text-white">10+</div>
-                      <div className="text-sm text-blue-100">Years Experience</div>
+                    <div className="bg-white/10 backdrop-blur-md p-5 rounded-xl">
+                      <div className="text-4xl font-bold text-white">10+</div>
+                      <div className="text-lg text-blue-100">Years Experience</div>
                     </div>
                   </div>
                 </div>
@@ -93,68 +120,46 @@ const Home = () => {
       </section>
 
       {/* Services Preview Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Visa Services</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="section-title gradient-text">Our Visa Services</h2>
+            <p className="section-subtitle">
               We specialize in providing visa consultancy services for various categories of Chinese visas.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Business Visa",
-                description: "For entrepreneurs and business professionals visiting China for meetings, negotiations, and business activities.",
-                icon: "💼",
-                image: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=600&h=400&q=80"
-              },
-              {
-                title: "Study Visa",
-                description: "For students pursuing education in Chinese universities and educational institutions.",
-                icon: "🎓",
-                image: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=600&h=400&q=80"
-              },
-              {
-                title: "Family Visa",
-                description: "For family members of Chinese residents or citizens for reunion and settlement purposes.",
-                icon: "👨‍👩‍👧‍👦",
-                image: "https://images.unsplash.com/photo-1469041797191-50ace28483c3?auto=format&fit=crop&w=600&h=400&q=80"
-              },
-              {
-                title: "Work Visa",
-                description: "For professionals seeking employment opportunities in Chinese companies and institutions.",
-                icon: "🏢",
-                image: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=600&h=400&q=80"
-              }
-            ].map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
               <div 
                 key={index} 
-                className="bg-white p-6 rounded-xl shadow-md card-hover overflow-hidden"
+                className="gradient-card p-6 rounded-xl shadow-lg card-hover overflow-hidden stagger-item stagger-delay-${index + 1}"
               >
-                <div className="h-40 -mx-6 -mt-6 mb-4 overflow-hidden">
+                <div className="h-48 -mx-6 -mt-6 mb-6 overflow-hidden relative">
                   <img 
                     src={service.image} 
                     alt={service.title} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 bg-blue-600 p-3 rounded-full">
+                    {service.icon}
+                  </div>
                 </div>
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{service.title}</h3>
+                <p className="text-gray-600 mb-5">{service.description}</p>
                 <Link 
                   to="/services" 
                   className="text-blue-600 font-medium flex items-center hover:text-blue-700 animate-hover"
                 >
-                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More <ArrowRight className="ml-1 h-5 w-5" />
                 </Link>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-hover">
+          <div className="text-center mt-16">
+            <Button asChild className="bg-blue-600 hover:bg-blue-700 btn-hover text-lg px-8 py-6 h-auto">
               <Link to="/services">View All Services</Link>
             </Button>
           </div>
@@ -162,16 +167,16 @@ const Home = () => {
       </section>
 
       {/* Process Preview Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Application Process</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-16">
+            <h2 className="section-title gradient-text">Our Application Process</h2>
+            <p className="section-subtitle">
               We make the visa application process straightforward and hassle-free.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 step: "01",
@@ -191,19 +196,19 @@ const Home = () => {
             ].map((process, index) => (
               <div 
                 key={index} 
-                className="relative p-6 rounded-xl border border-gray-200 card-hover"
+                className="relative p-8 rounded-xl border border-gray-200 card-hover gradient-card stagger-item stagger-delay-${index + 1}"
               >
-                <span className="absolute -top-4 -left-4 bg-blue-600 text-white text-xl font-bold h-12 w-12 rounded-full flex items-center justify-center shadow-lg">
+                <span className="absolute -top-6 -left-6 gradient-primary text-white text-2xl font-bold h-16 w-16 rounded-full flex items-center justify-center shadow-lg">
                   {process.step}
                 </span>
-                <h3 className="text-xl font-semibold mb-3 mt-4 text-gray-900">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
+                <h3 className="text-2xl font-semibold mb-4 mt-6 text-gray-900">{process.title}</h3>
+                <p className="text-lg text-gray-600">{process.description}</p>
               </div>
             ))}
           </div>
           
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 btn-hover">
+          <div className="text-center mt-16">
+            <Button asChild variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 btn-hover text-lg px-8 py-6 h-auto">
               <Link to="/application-process">View Full Process</Link>
             </Button>
           </div>
@@ -211,45 +216,45 @@ const Home = () => {
       </section>
 
       {/* Book a Quote Section */}
-      <section id="book-quote" className="py-16 bg-gray-50 scroll-mt-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="p-1 border-2 border-blue-600 rounded-xl overflow-hidden">
+      <section id="book-quote" className="py-20 bg-gray-50 scroll-mt-20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="p-2 border-4 border-blue-600 rounded-2xl overflow-hidden shadow-xl">
                 <img 
                   src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?auto=format&fit=crop&w=800&h=600&q=80" 
                   alt="Chinese cityscape" 
-                  className="w-full h-96 object-cover rounded-lg"
+                  className="w-full h-[500px] object-cover rounded-xl"
                 />
               </div>
-              <div className="mt-8 bg-white p-6 rounded-xl shadow-md -mt-20 ml-8 relative z-10 max-w-md">
-                <div className="flex items-center space-x-4 mb-4">
+              <div className="mt-8 bg-white p-8 rounded-xl shadow-lg -mt-24 ml-12 relative z-10 max-w-md gradient-card">
+                <div className="flex items-center space-x-5 mb-5">
                   <img 
                     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0eiIgZmlsbD0iI0RGMDE0QyIvPjxwYXRoIGQ9Ik0yODIuNiA0MjguNmwyMDkuNi03MC4xIDk2LjggMzA2LjYgMTM3LjktMzcuNUw2MzUgMzU4LjNsMTA2LjYgMzMuN1MyNjQuNiA2NCA2NCA1MTIiIGZpbGw9IiNGRkRFMDAiLz48L3N2Zz4=" 
                     alt="Chinese flag" 
-                    className="w-12 h-12"
+                    className="w-16 h-16"
                   />
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">China Visa Specialists</h3>
-                    <p className="text-gray-600">Authorized by Chinese Embassy</p>
+                    <h3 className="text-2xl font-bold text-gray-900">China Visa Specialists</h3>
+                    <p className="text-lg text-gray-600">Authorized by Chinese Embassy</p>
                   </div>
                 </div>
-                <p className="text-gray-700 italic">
+                <p className="text-lg text-gray-700 italic">
                   "Our team of professionals ensures a smooth visa application process with the highest success rate in Pakistan."
                 </p>
               </div>
             </div>
             
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-3xl font-bold mb-6 text-gray-900">Book a Free Quote</h2>
-              <p className="text-gray-600 mb-6">
+            <div className="bg-white p-10 rounded-2xl shadow-lg gradient-card">
+              <h2 className="text-3xl font-bold mb-8 text-gray-900 gradient-text">Book a Free Quote</h2>
+              <p className="text-lg text-gray-600 mb-8">
                 Fill out the form below to receive a personalized visa consultation and quote. Our experts will contact you within 24 hours.
               </p>
               
               <form onSubmit={handleQuoteSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name" className="text-base">Full Name</Label>
                     <Input 
                       id="name" 
                       name="name" 
@@ -257,11 +262,12 @@ const Home = () => {
                       onChange={handleQuoteChange} 
                       placeholder="Your full name" 
                       required 
+                      className="h-12 text-base"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email" className="text-base">Email Address</Label>
                     <Input 
                       id="email" 
                       name="email" 
@@ -270,13 +276,14 @@ const Home = () => {
                       onChange={handleQuoteChange} 
                       placeholder="Your email address" 
                       required 
+                      className="h-12 text-base"
                     />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-base">Phone Number</Label>
                     <Input 
                       id="phone" 
                       name="phone" 
@@ -284,17 +291,18 @@ const Home = () => {
                       onChange={handleQuoteChange} 
                       placeholder="Your phone number" 
                       required 
+                      className="h-12 text-base"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="visaType">Visa Type</Label>
+                    <Label htmlFor="visaType" className="text-base">Visa Type</Label>
                     <select 
                       id="visaType" 
                       name="visaType" 
                       value={quoteForm.visaType}
                       onChange={handleQuoteChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       required
                     >
                       <option value="business">Business Visa</option>
@@ -307,7 +315,7 @@ const Home = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message (Optional)</Label>
+                  <Label htmlFor="message" className="text-base">Message (Optional)</Label>
                   <Textarea 
                     id="message" 
                     name="message" 
@@ -315,14 +323,15 @@ const Home = () => {
                     onChange={handleQuoteChange} 
                     placeholder="Any specific requirements or questions" 
                     rows={4} 
+                    className="text-base"
                   />
                 </div>
                 
-                <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 btn-hover">
+                <Button type="submit" className="w-full gradient-primary hover:opacity-90 btn-hover text-lg h-14">
                   Get Your Free Quote
                 </Button>
                 
-                <p className="text-center text-sm text-gray-500">
+                <p className="text-center text-base text-gray-500">
                   <span className="text-red-500 font-bold">Special Offer:</span> 20% discount on file completion available for a limited time.
                 </p>
               </form>
@@ -332,13 +341,13 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start Your Visa Application?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+      <section className="py-20 gradient-primary text-white">
+        <div className="container mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Start Your Visa Application?</h2>
+          <p className="text-xl md:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto">
             Contact our team today and take the first step towards your Chinese visa.
           </p>
-          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover">
+          <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 btn-hover text-lg px-10 py-7 h-auto">
             <Link to="/contact">Contact Us Now</Link>
           </Button>
         </div>
