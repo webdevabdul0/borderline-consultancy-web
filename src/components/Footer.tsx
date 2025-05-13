@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto pt-12 pb-8 px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">Borderline Consultancy</h3>
+            <h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-200 bg-clip-text text-transparent">Borderline Visa Consultancy</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               Your trusted partner for visa consultancy services. We specialize in Chinese visas including business, study, work, and family categories.
             </p>
@@ -68,15 +68,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-blue-400 mr-2 mt-0.5" />
-                <span className="text-gray-300 text-sm">Gulberg III, Lahore, Pakistan</span>
+                <span className="text-gray-300 text-sm">Office 26 M2 Floor, Eden Tower, <br />Gulberg 3, Lahore, Pakistan</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-blue-400 mr-2" />
-                <span className="text-gray-300 text-sm">+92 321 1234567</span>
+                <span className="text-gray-300 text-sm">+92 333 0481 399</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-2" />
-                <span className="text-gray-300 text-sm">info@borderlineconsultancy.com</span>
+                <span className="text-gray-300 text-sm">info@borderlinevisa.com</span>
               </li>
               <li className="flex items-center">
                 <Calendar className="h-5 w-5 text-blue-400 mr-2" />
@@ -87,8 +87,11 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-10 pt-6">
-          <p className="text-center text-gray-400 text-sm">
-            © {new Date().getFullYear()} Borderline Consultancy. All rights reserved.
+          <p className="text-center text-gray-400 text-sm mb-2">
+            © {new Date().getFullYear()} Borderline Visa Consultancy. All rights reserved.
+          </p>
+          <p className="text-center text-gray-400 text-xs">
+            Authorized by Chinese Embassy of Pakistan and asserted by Gerry Visa International
           </p>
         </div>
       </div>

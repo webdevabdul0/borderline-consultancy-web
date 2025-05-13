@@ -11,6 +11,7 @@ import ApplicationProcess from "./pages/ApplicationProcess";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
+import DiscountPopup from "./components/DiscountPopup";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <DiscountPopup />
         <Routes>
           <Route path="/" element={<Layout><Home /></Layout>} />
           <Route path="/services" element={<Layout><Services /></Layout>} />

@@ -72,8 +72,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Office Location</h3>
                     <p className="text-gray-600">
-                      MM Alam Road, Gulberg III<br />
-                      Lahore, Pakistan
+                      Office 26 M2 Floor, Eden Tower,<br />
+                      Gulberg 3, Lahore, Pakistan
                     </p>
                   </div>
                 </div>
@@ -85,8 +85,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Phone Numbers</h3>
                     <p className="text-gray-600">
-                      Office: +92 321 1234567<br />
-                      Mobile: +92 333 7654321
+                      Office: +92 333 0481 399<br />
+                      Mobile: +92 333 0481 399
                     </p>
                   </div>
                 </div>
@@ -98,8 +98,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-gray-900 mb-1">Email Addresses</h3>
                     <p className="text-gray-600">
-                      Info: info@borderlineconsultancy.com<br />
-                      Support: support@borderlineconsultancy.com
+                      Info: info@borderlinevisa.com<br />
+                      Support: support@borderlinevisa.com
                     </p>
                   </div>
                 </div>
@@ -119,12 +119,13 @@ const Contact = () => {
                 </div>
               </div>
               
-              {/* Map or Office Image Placeholder */}
+              {/* Map or Office Image */}
               <div className="mt-8 h-64 bg-gray-200 rounded-lg overflow-hidden">
-                {/* This would be where you'd integrate Google Maps or an office image */}
-                <div className="h-full w-full flex items-center justify-center bg-blue-50">
-                  <span className="text-gray-500">Map Location</span>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1200&h=400&q=80" 
+                  alt="Lahore" 
+                  className="h-full w-full object-cover"
+                />
               </div>
             </div>
             

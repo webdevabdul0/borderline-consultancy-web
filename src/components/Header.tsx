@@ -47,7 +47,7 @@ const Header = () => {
           <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             Borderline
           </span>
-          <span className="text-lg font-medium">Consultancy</span>
+          <span className="text-lg font-medium">Visa Consultancy</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -67,7 +67,7 @@ const Header = () => {
             </Link>
           ))}
           <Button className="bg-blue-600 hover:bg-blue-700 btn-hover">
-            Get Started
+            <a href="/#book-quote">Get Started</a>
           </Button>
         </nav>
 
@@ -104,7 +104,7 @@ const Header = () => {
               className="bg-blue-600 hover:bg-blue-700 w-full mt-2 btn-hover"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get Started
+              <a href="/#book-quote">Get Started</a>
             </Button>
           </div>
         </nav>
