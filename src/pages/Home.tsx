@@ -222,16 +222,16 @@ const Home = () => {
             <div className="relative">
               <div className="p-2 border-4 border-blue-600 rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?auto=format&fit=crop&w=800&h=600&q=80" 
-                  alt="Global cityscape" 
+                  src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&h=600&q=80" 
+                  alt="European landscape" 
                   className="w-full h-[500px] object-cover rounded-xl"
                 />
               </div>
               <div className="mt-8 bg-gray-800 p-8 rounded-xl shadow-lg -mt-24 ml-12 relative z-10 max-w-md gradient-card">
                 <div className="flex items-center space-x-5 mb-5">
                   <img 
-                    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0eiIgZmlsbD0iI0RGMDE0QyIvPjxwYXRoIGQ9Ik0yODIuNiA0MjguNmwyMDkuNi03MC4xIDk2LjggMzA2LjYgMTM3LjktMzcuNUw2MzUgMzU4LjNsMTA2LjYgMzMuN1MyNjQuNiA2NCA2NCA1MTIiIGZpbGw9IiNGRkRFMDAiLz48L3N2Zz4=" 
-                    alt="International Visa" 
+                    src="/lovable-uploads/9960c49c-dd0f-44e4-b34e-9eebc50f62e6.png" 
+                    alt="Border Visa Logo" 
                     className="w-16 h-16"
                   />
                   <div>

@@ -28,12 +28,12 @@ const DiscountPopup = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-gray-800 border-gray-700 text-white">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center text-blue-700">Special Offer!</DialogTitle>
-          <DialogDescription className="text-center py-2">
+          <DialogTitle className="text-2xl font-bold text-center text-blue-400">Special Offer!</DialogTitle>
+          <DialogDescription className="text-center py-2 text-gray-200">
             <div className="py-4">
-              <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4 mb-4">
+              <div className="bg-gray-700 border-l-4 border-yellow-500 p-4 mb-4">
                 <div className="flex">
                   <div className="flex-shrink-0">
                     <svg className="h-5 w-5 text-yellow-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -41,8 +41,8 @@ const DiscountPopup = () => {
                     </svg>
                   </div>
                   <div className="ml-3">
-                    <p className="text-sm text-yellow-700">
-                      We are currently offering a <span className="font-bold">20% discount</span> on all file completion services!
+                    <p className="text-sm text-gray-200">
+                      We are currently offering a <span className="font-bold text-yellow-400">20% discount</span> on all file completion services!
                     </p>
                   </div>
                 </div>
@@ -50,30 +50,30 @@ const DiscountPopup = () => {
               
               <div className="flex justify-center mb-4">
                 <img 
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0eiIgZmlsbD0iI0RGMDE0QyIvPjxwYXRoIGQ9Ik0yODIuNiA0MjguNmwyMDkuNi03MC4xIDk2LjggMzA2LjYgMTM3LjktMzcuNUw2MzUgMzU4LjNsMTA2LjYgMzMuN1MyNjQuNiA2NCA2NCA1MTIiIGZpbGw9IiNGRkRFMDAiLz48L3N2Zz4=" 
-                  alt="Chinese flag" 
+                  src="/lovable-uploads/9960c49c-dd0f-44e4-b34e-9eebc50f62e6.png" 
+                  alt="Border logo" 
                   className="w-24 h-24"
                 />
               </div>
               
-              <p className="text-base text-gray-700 mb-4">
-                Limited time offer for all types of Chinese visas. Contact us today to take advantage of this special promotion!
+              <p className="text-base text-gray-300 mb-4">
+                Limited time offer for all types of visas. Contact us today to take advantage of this special promotion!
               </p>
               
-              <p className="text-sm text-gray-500 italic">
+              <p className="text-sm text-gray-400 italic">
                 *Offer valid for new applications only. Terms and conditions apply.
               </p>
             </div>
           </DialogDescription>
         </DialogHeader>
         <div className="flex justify-between mt-4">
-          <Button variant="outline" onClick={handleClose}>
+          <Button variant="outline" onClick={handleClose} className="border-gray-600 text-gray-300 hover:bg-gray-700">
             Close
           </Button>
           <Button onClick={() => {
             window.location.href = "/#book-quote";
             handleClose();
-          }}>
+          }} className="bg-blue-600 text-white hover:bg-blue-700">
             Book Now
           </Button>
         </div>
