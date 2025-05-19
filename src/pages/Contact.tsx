@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -15,12 +16,17 @@ const Contact = () => {
     phone: "",
     subject: "",
     message: "",
-    visaType: "business"
+    visaType: "business",
+    newsletter: false
   });
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+  };
+  
+  const handleCheckboxChange = (checked: boolean) => {
+    setFormData(prev => ({ ...prev, newsletter: checked }));
   };
   
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,7 +47,8 @@ const Contact = () => {
       phone: "",
       subject: "",
       message: "",
-      visaType: "business"
+      visaType: "business",
+      newsletter: false
     });
   };
 
@@ -63,15 +70,15 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Get in Touch</h2>
+              <h2 className="text-2xl font-bold mb-6 text-gray-100">Get in Touch</h2>
               <div className="space-y-8">
                 <div className="flex items-start">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <MapPin className="h-6 w-6 text-blue-600" />
+                  <div className="h-12 w-12 rounded-full bg-blue-900/60 flex items-center justify-center mr-4">
+                    <MapPin className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-1">Office Location</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg text-gray-100 mb-1">Office Location</h3>
+                    <p className="text-gray-300">
                       Office 26 M2 Floor, Eden Tower,<br />
                       Gulberg 3, Lahore, Pakistan
                     </p>
@@ -79,25 +86,25 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <Phone className="h-6 w-6 text-blue-600" />
+                  <div className="h-12 w-12 rounded-full bg-blue-900/60 flex items-center justify-center mr-4">
+                    <Phone className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-1">Phone Numbers</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg text-gray-100 mb-1">Phone Numbers</h3>
+                    <p className="text-gray-300">
                       Office: +92 333 0481 399<br />
-                      Mobile: +92 333 0481 399
+                      Mobile: +92 317 4848375
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <Mail className="h-6 w-6 text-blue-600" />
+                  <div className="h-12 w-12 rounded-full bg-blue-900/60 flex items-center justify-center mr-4">
+                    <Mail className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-1">Email Addresses</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg text-gray-100 mb-1">Email Addresses</h3>
+                    <p className="text-gray-300">
                       Info: info@borderlinevisa.com<br />
                       Support: support@borderlinevisa.com
                     </p>
@@ -105,12 +112,12 @@ const Contact = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                    <Clock className="h-6 w-6 text-blue-600" />
+                  <div className="h-12 w-12 rounded-full bg-blue-900/60 flex items-center justify-center mr-4">
+                    <Clock className="h-6 w-6 text-blue-400" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg text-gray-900 mb-1">Business Hours</h3>
-                    <p className="text-gray-600">
+                    <h3 className="font-semibold text-lg text-gray-100 mb-1">Business Hours</h3>
+                    <p className="text-gray-300">
                       Monday - Friday: 9:00 AM - 6:00 PM<br />
                       Saturday: 10:00 AM - 2:00 PM<br />
                       Sunday: Closed
@@ -120,23 +127,23 @@ const Contact = () => {
               </div>
               
               {/* Map or Office Image */}
-              <div className="mt-8 h-64 bg-gray-200 rounded-lg overflow-hidden">
+              <div className="mt-8 h-64 bg-gray-800 rounded-lg overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&fit=crop&w=1200&h=400&q=80" 
                   alt="Lahore" 
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover opacity-80"
                 />
               </div>
             </div>
             
             {/* Contact Form */}
-            <div className="bg-white p-8 rounded-xl shadow-md">
-              <h2 className="text-2xl font-bold mb-6 text-gray-900">Send us a Message</h2>
+            <div className="bg-gray-800/70 p-8 rounded-xl shadow-md border border-gray-700">
+              <h2 className="text-2xl font-bold mb-6 text-gray-100">Send us a Message</h2>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
+                    <Label htmlFor="name" className="text-gray-200">Full Name</Label>
                     <Input 
                       id="name" 
                       name="name" 
@@ -144,11 +151,12 @@ const Contact = () => {
                       onChange={handleChange} 
                       placeholder="Your full name" 
                       required 
+                      className="bg-gray-700/70 border-gray-600 text-gray-100 placeholder:text-gray-400"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
+                    <Label htmlFor="email" className="text-gray-200">Email Address</Label>
                     <Input 
                       id="email" 
                       name="email" 
@@ -157,13 +165,14 @@ const Contact = () => {
                       onChange={handleChange} 
                       placeholder="Your email address" 
                       required 
+                      className="bg-gray-700/70 border-gray-600 text-gray-100 placeholder:text-gray-400"
                     />
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone" className="text-gray-200">Phone Number</Label>
                     <Input 
                       id="phone" 
                       name="phone" 
@@ -171,17 +180,18 @@ const Contact = () => {
                       onChange={handleChange} 
                       placeholder="Your phone number" 
                       required 
+                      className="bg-gray-700/70 border-gray-600 text-gray-100 placeholder:text-gray-400"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="visaType">Visa Type</Label>
+                    <Label htmlFor="visaType" className="text-gray-200">Visa Type</Label>
                     <select 
                       id="visaType" 
                       name="visaType" 
                       value={formData.visaType}
                       onChange={handleChange}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                      className="flex h-10 w-full rounded-md border border-gray-600 bg-gray-700/70 px-3 py-2 text-sm text-gray-100 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                       required
                     >
                       <option value="business">Business Visa</option>
@@ -194,7 +204,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
+                  <Label htmlFor="subject" className="text-gray-200">Subject</Label>
                   <Input 
                     id="subject" 
                     name="subject" 
@@ -202,11 +212,12 @@ const Contact = () => {
                     onChange={handleChange} 
                     placeholder="Subject of your message" 
                     required 
+                    className="bg-gray-700/70 border-gray-600 text-gray-100 placeholder:text-gray-400"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message" className="text-gray-200">Message</Label>
                   <Textarea 
                     id="message" 
                     name="message" 
@@ -215,7 +226,22 @@ const Contact = () => {
                     placeholder="Write your message here..." 
                     rows={4} 
                     required 
+                    className="bg-gray-700/70 border-gray-600 text-gray-100 placeholder:text-gray-400"
                   />
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <Checkbox 
+                    id="newsletter" 
+                    checked={formData.newsletter} 
+                    onCheckedChange={handleCheckboxChange}
+                  />
+                  <label
+                    htmlFor="newsletter"
+                    className="text-sm font-medium leading-none text-gray-300 peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    Subscribe to our newsletter for visa updates
+                  </label>
                 </div>
                 
                 <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 btn-hover">
@@ -228,9 +254,9 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-800/30">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-100">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto grid gap-6">
             {[
               {
@@ -250,9 +276,9 @@ const Contact = () => {
                 answer: "For the initial consultation, it's helpful to bring your passport, any previous visa documentation, educational certificates, and employment details depending on the type of visa you're applying for."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="bg-gray-800/70 p-6 rounded-lg shadow-sm border border-gray-700">
+                <h3 className="text-xl font-semibold mb-3 text-gray-100">{faq.question}</h3>
+                <p className="text-gray-300">{faq.answer}</p>
               </div>
             ))}
           </div>

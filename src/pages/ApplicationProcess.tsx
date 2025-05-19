@@ -97,19 +97,19 @@ const ApplicationProcess = () => {
                       {step.number}
                     </div>
                     {index < steps.length - 1 && (
-                      <div className="hidden md:block w-0.5 bg-blue-200 h-36 ml-10 -mb-6"></div>
+                      <div className="hidden md:block w-0.5 bg-blue-200/30 h-36 ml-10 -mb-6"></div>
                     )}
                   </div>
                   <div className="md:w-3/4">
-                    <h2 className="text-3xl font-bold mb-4 text-gray-900">{step.title}</h2>
-                    <p className="text-xl text-gray-600 mb-6">{step.description}</p>
-                    <div className="gradient-card p-8 rounded-xl shadow-md">
-                      <h3 className="font-semibold text-xl text-gray-900 mb-5">What we provide:</h3>
+                    <h2 className="text-3xl font-bold mb-4 text-gray-100">{step.title}</h2>
+                    <p className="text-xl text-gray-300 mb-6">{step.description}</p>
+                    <div className="bg-gray-800/70 p-8 rounded-xl shadow-md border border-gray-700">
+                      <h3 className="font-semibold text-xl text-gray-100 mb-5">What we provide:</h3>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {step.details.map((detail, idx) => (
                           <li key={idx} className="flex items-start">
-                            <CheckCircle className="h-6 w-6 text-blue-600 mr-3 mt-0.5" />
-                            <span className="text-lg text-gray-700">{detail}</span>
+                            <CheckCircle className="h-6 w-6 text-blue-400 mr-3 mt-0.5" />
+                            <span className="text-lg text-gray-300">{detail}</span>
                           </li>
                         ))}
                       </ul>
@@ -123,7 +123,7 @@ const ApplicationProcess = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-800/30">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="section-title gradient-text text-center mb-16">Frequently Asked Questions</h2>
           <div className="max-w-4xl mx-auto grid gap-8">
@@ -145,9 +145,9 @@ const ApplicationProcess = () => {
                 answer: "Yes, we offer expedited services for urgent cases at an additional fee. The possibility and timeline for expedited processing depend on the visa type and current embassy policies."
               }
             ].map((faq, index) => (
-              <div key={index} className="gradient-card p-8 rounded-xl shadow-lg stagger-item stagger-delay-${index % 4 + 1}">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">{faq.question}</h3>
-                <p className="text-lg text-gray-600">{faq.answer}</p>
+              <div key={index} className="bg-gray-800/70 p-8 rounded-xl shadow-lg border border-gray-700 stagger-item stagger-delay-${index % 4 + 1}">
+                <h3 className="text-2xl font-semibold mb-4 text-gray-100">{faq.question}</h3>
+                <p className="text-lg text-gray-300">{faq.answer}</p>
               </div>
             ))}
           </div>
