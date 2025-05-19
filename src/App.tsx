@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import ApplicationProcess from "./pages/ApplicationProcess";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
+import Appointments from "./pages/Appointments";
 import NotFound from "./pages/NotFound";
 import DiscountPopup from "./components/DiscountPopup";
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/services" element={<Layout><Services /></Layout>} />
           <Route path="/application-process" element={<Layout><ApplicationProcess /></Layout>} />
           <Route path="/contact" element={<Layout><Contact /></Layout>} />
+          <Route path="/appointments" element={<Layout><Appointments /></Layout>} />
           <Route path="/terms" element={<Layout><Terms /></Layout>} />
           <Route path="*" element={<Layout><NotFound /></Layout>} />
         </Routes>
