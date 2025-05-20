@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,27 +28,43 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, newsletter: checked }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    
-    // Show success message
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you as soon as possible.",
-      duration: 5000,
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-      visaType: "business",
-      newsletter: false
-    });
+    try {
+      const response = await fetch('/.netlify/functions/send-form-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, formType: 'contact' })
+      });
+      if (response.ok) {
+        toast({
+          title: 'Message Sent!',
+          description: "We'll get back to you as soon as possible.",
+          duration: 5000,
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+          visaType: 'business',
+          newsletter: false
+        });
+      } else {
+        toast({
+          title: 'Submission Failed',
+          description: 'There was an error submitting your message. Please try again later.',
+          duration: 5000,
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Submission Failed',
+        description: 'There was an error submitting your message. Please try again later.',
+        duration: 5000,
+      });
+    }
   };
 
   return (
@@ -105,7 +120,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-gray-100 mb-1">Email Addresses</h3>
                     <p className="text-gray-300">
-                      Info: info@borderlinevisa.com<br />
+                      Info: borderlinevisaconsultancy@gmail.com<br />
                       Support: support@borderlinevisa.com
                     </p>
                   </div>

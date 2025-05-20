@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,7 +55,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-blue-400 mr-3" />
-                <span>info@borderlinevisa.com</span>
+                <span>borderlinevisaconsultancy@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -119,9 +118,6 @@ const Footer = () => {
 
         {/* Authorization Note */}
         <div className="border-t border-gray-800 pt-8 mt-8 text-center">
-          <p className="text-gray-400 mb-4">
-            Authorized by Chinese Embassy of Pakistan and asserted by Gerry Visa International
-          </p>
           <p className="text-gray-500">
             &copy; {new Date().getFullYear()} Borderline Visa Consultancy. All rights reserved.
           </p>

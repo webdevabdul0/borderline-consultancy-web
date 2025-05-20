@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -147,7 +146,7 @@ const Terms = () => {
                   Borderline Visa Consultancy<br />
                   Office 26 M2 Floor, Eden Tower<br />
                   Gulberg 3, Lahore, Pakistan<br />
-                  Email: info@borderlinevisa.com<br />
+                  Email: borderlinevisaconsultancy@gmail.com<br />
                   Phone: +92 333 0481 399
                 </address>
               </div>

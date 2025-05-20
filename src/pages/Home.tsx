@@ -1,4 +1,3 @@
-
 import { ArrowRight, GraduationCap, Users, Briefcase, Home as HomeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -23,23 +22,41 @@ const Home = () => {
     setQuoteForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleQuoteSubmit = (e: React.FormEvent) => {
+  const handleQuoteSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Quote form submitted:", quoteForm);
-    
-    toast({
-      title: "Quote Request Received!",
-      description: "We'll respond with a detailed quote soon.",
-      duration: 5000,
-    });
-    
-    setQuoteForm({
-      name: "",
-      email: "",
-      phone: "",
-      visaType: "business",
-      message: ""
-    });
+    try {
+      const response = await fetch('/.netlify/functions/send-form-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...quoteForm, formType: 'quote' })
+      });
+      if (response.ok) {
+        toast({
+          title: 'Quote Request Received!',
+          description: "We'll respond with a detailed quote soon.",
+          duration: 5000,
+        });
+        setQuoteForm({
+          name: '',
+          email: '',
+          phone: '',
+          visaType: 'business',
+          message: ''
+        });
+      } else {
+        toast({
+          title: 'Submission Failed',
+          description: 'There was an error submitting your quote. Please try again later.',
+          duration: 5000,
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Submission Failed',
+        description: 'There was an error submitting your quote. Please try again later.',
+        duration: 5000,
+      });
+    }
   };
 
   const services = [

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -25,25 +24,43 @@ const Appointments = () => {
     setAppointmentForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleAppointmentSubmit = (e: React.FormEvent) => {
+  const handleAppointmentSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Appointment form submitted:", appointmentForm);
-    
-    toast({
-      title: "Appointment Request Submitted!",
-      description: "We'll confirm your appointment shortly.",
-      duration: 5000,
-    });
-    
-    setAppointmentForm({
-      name: "",
-      email: "",
-      phone: "",
-      country: "china",
-      date: "",
-      time: "",
-      message: ""
-    });
+    try {
+      const response = await fetch('/.netlify/functions/send-form-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...appointmentForm, formType: 'appointment' })
+      });
+      if (response.ok) {
+        toast({
+          title: 'Appointment Request Submitted!',
+          description: "We'll confirm your appointment shortly.",
+          duration: 5000,
+        });
+        setAppointmentForm({
+          name: '',
+          email: '',
+          phone: '',
+          country: 'china',
+          date: '',
+          time: '',
+          message: ''
+        });
+      } else {
+        toast({
+          title: 'Submission Failed',
+          description: 'There was an error submitting your appointment. Please try again later.',
+          duration: 5000,
+        });
+      }
+    } catch (error) {
+      toast({
+        title: 'Submission Failed',
+        description: 'There was an error submitting your appointment. Please try again later.',
+        duration: 5000,
+      });
+    }
   };
 
   const countries = [
